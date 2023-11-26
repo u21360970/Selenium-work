@@ -1,0 +1,70 @@
+package Webpackage;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebDriver;
+
+
+
+
+public class Webclass {
+
+	public static void main(String[] args)throws InterruptedException{
+		
+		// test
+		System.setProperty("Webdriver.chrome.river","C:\\chrome folder\\chrome.exe");
+		WebDriver driver = new ChromeDriver();
+		// System under test
+		driver.get("https://2941-8888.webfin.co.za/Login.aspx");
+		
+		Thread.sleep(200);
+		// Login into the system
+
+		driver.findElement(By.id("edtUsername")).sendKeys("Phutis");
+		driver.findElement(By.id("edtPassword")).sendKeys("Mandy2020");
+		driver.findElement(By.id("btnLogin")).click();
+		
+		Thread.sleep(2000);
+     
+		driver.findElement(By.id("bt1")).click();
+		
+		Thread.sleep(2000);
+		// Create new client
+		driver.findElement(By.id("addClientButton")).click();
+		  Thread.sleep(2000);
+		// Add client ID no	
+		driver.findElement(By.id("txtIDNo")).sendKeys("8104015745088");
+		  Thread.sleep(700);
+		  driver.findElement(By.id("inputtxtBirthDate")).sendKeys("01041981");
+		  // add client surname
+		  Thread.sleep(700);
+		  driver.findElement(By.id("txtSurname")).sendKeys("Lamola");
+		  Thread.sleep(700);
+		  // add client name
+		  driver.findElement(By.id("txtName")).sendKeys("Morena");
+		  driver.findElement(By.cssSelector("#cmbNationality")).sendKeys("SOUTH AFRICA");
+		  driver.findElement(By.cssSelector("#cmbLanguage")).sendKeys("En");
+		  driver.findElement(By.cssSelector("#cmbMarital")).sendKeys("Single");
+			  
+		  driver.findElement(By.cssSelector("#cmbCOB")).sendKeys("SOUTH AFRICA");
+			  
+		  driver.findElement(By.id("txtPAddress1")).sendKeys("100 main Street");
+		  driver.findElement(By.id("txtPSuburb")).sendKeys("Centurion");
+		  driver.findElement(By.id("txtPTown")).sendKeys("Pretoria");
+		  // Select province
+		  driver.findElement(By.cssSelector("#cmbPProvince")).sendKeys("GAUTENG");
+		  Thread.sleep(700);
+		  driver.findElement(By.id("txtPPostalCode")).sendKeys("0175");
+		  // copy residential to post
+		driver.findElement(By.id("Image27")).click();
+		driver.findElement(By.id("txtCCellular")).sendKeys("0800000000");
+		// Go to the bank details screen
+		driver.findElement(By.id("AddClientTabsTab1")).click();
+		  
+			
+		  
+
+	}
+
+}
+
